@@ -57,6 +57,10 @@ If you wanted to toggle the value of `isChecked` you can do so with
 `{ isChecked: '!!' }`, this will check for `!!` and if found, toggle the value
 based on the `isChecked` value on the `TargetEl` element.
 
+#### Multiple Targets with a Shared Selector
+
+This has been handled before you behind the scenes.
+
 _`isChecked` is just an example, you don't need to call your Alpine JS data
 that_
 

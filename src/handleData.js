@@ -1,5 +1,6 @@
 export function handleData(targetEl, newData) {
-  const foundEl = document.querySelector(targetEl)
+  const foundEl =
+    typeof targetEl === 'object' ? targetEl : document.querySelector(targetEl)
   const alpineEl = Alpine.$data(foundEl)
 
   Object.keys(newData).forEach((dataKey) => {

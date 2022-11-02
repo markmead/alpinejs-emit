@@ -8,6 +8,8 @@ export default function (Alpine) {
       return
     }
 
-    handleData(targetEl, newData)
+    const targetEls = document.querySelectorAll(targetEl)
+
+    targetEls.forEach((elItem) => handleData(elItem, newData))
   })
 }
