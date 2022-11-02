@@ -1,1 +1,1 @@
-function o(c){c.magic("emit",(m,{Alpine:l})=>(r,e)=>{let f=document.querySelector(r),i=l.$data(f);Object.keys(e).forEach(t=>{i[t]=e[t]})})}var d=o;export{d as default};
+function i(c,n){let e=document.querySelector(c),f=Alpine.$data(e);Object.keys(n).forEach(o=>{f[o]=n[o]==="!!"?f[o]=!f[o]:n[o]})}function r(c){c.magic("emit",({Alpine:n})=>(e,f=!1)=>{if(typeof e=="object"){e.forEach(o=>i(o[0],o[1]));return}i(e,f)})}var m=r;export{m as default};

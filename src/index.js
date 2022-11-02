@@ -1,26 +1,13 @@
+import { handleData } from './handleData'
+
 export default function (Alpine) {
-  Alpine.magic('emit', (el, { Alpine }) => (targetEl, newData) => {
-    // Pass query selector
-    // Find elements
-    // Get data
-    // Change data based on options
+  Alpine.magic('emit', ({ Alpine }) => (targetEl, newData = false) => {
+    if (typeof targetEl === 'object') {
+      targetEl.forEach((elItem) => handleData(elItem[0], elItem[1]))
 
-    const foundEl = document.querySelector(targetEl)
+      return
+    }
 
-    const alpineEl = Alpine.$data(foundEl)
-
-    Object.keys(newData).forEach((dataKey) => {
-      alpineEl[dataKey] = newData[dataKey]
-    })
+    handleData(targetEl, newData)
   })
 }
-
-// document.addEventListener('alpine:init', () => {
-//   Alpine.magic('manage', () => (xRef) => {
-//       const targetEl = document.querySelector(`[x-ref="${xRef}"]`)
-//       if (!targetEl) {
-//           return
-//       }
-//       return Alpine.$data(targetEl)
-//   })
-// })

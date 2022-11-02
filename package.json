@@ -1,12 +1,16 @@
 {
   "name": "alpinejs-emit",
   "version": "1.0.0",
-  "description": "Description of the plugin",
+  "description": "Emit data changes to other Alpine JS elements 📣",
   "keywords": [
     "Alpine",
     "Alpine JS",
     "Alpine JS Plugin",
-    "Alpine JS Plugins"
+    "Alpine JS Plugins",
+    "Alpine JS Emit",
+    "Alpine JS Emitter",
+    "JavaScript Emit",
+    "JavaScript Emitter"
   ],
   "module": "dist/emit.esm.js",
   "unpkg": "dist/emit.min.js",
