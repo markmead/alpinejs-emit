@@ -1,7 +1,7 @@
 {
   "name": "alpinejs-emit",
-  "version": "1.0.0",
-  "description": "Emit data changes to other Alpine JS elements 📣",
+  "version": "1.0.1",
+  "description": "Emit `x-data` changes to other Alpine JS elements 📣",
   "keywords": [
     "Alpine",
     "Alpine JS",
