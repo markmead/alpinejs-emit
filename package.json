@@ -1,5 +1,5 @@
 {
-  "name": "PLUGIN",
+  "name": "alpinejs-emit",
   "version": "1.0.0",
   "description": "Description of the plugin",
   "keywords": [
@@ -8,8 +8,8 @@
     "Alpine JS Plugin",
     "Alpine JS Plugins"
   ],
-  "module": "dist/FILE.esm.js",
-  "unpkg": "dist/FILE.min.js",
+  "module": "dist/emit.esm.js",
+  "unpkg": "dist/emit.min.js",
   "scripts": {
     "build": "node scripts/build.js"
   },

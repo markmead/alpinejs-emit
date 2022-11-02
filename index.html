@@ -6,12 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alpine JS Plugin</title>
 
-    <script defer src="./dist/FILE.min.js"></script>
+    <script defer src="./dist/emit.min.js"></script>
 
     <script
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
   </head>
-  <body> </body>
+  <body>
+    <div
+      x-data="{ isChecked: false }"
+      x-init="$watch('isChecked', () => $emit('#TargetEl', { isChecked }))"
+    >
+      <button x-on:click="isChecked = !isChecked">Toggle</button>
+
+      <span x-show="isChecked">Checked</span>
+    </div>
+
+    <div x-data="{ isChecked: false }" id="TargetEl">
+      <button x-on:click="isChecked = !isChecked">Toggle</button>
+
+      <span x-show="isChecked">Checked</span>
+    </div>
+  </body>
 </html>

@@ -1,3 +1,3 @@
-import FILE from '../src/index.js'
+import emit from '../src/index.js'
 
-export default FILE
+export default emit
