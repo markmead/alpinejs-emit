@@ -1,21 +1,19 @@
-build({
+buildPlugin({
   entryPoints: [`builds/cdn.js`],
-  outfile: `dist/emit.min.js`,
-  platform: 'browser',
-  define: { CDN: true },
+  outfile: 'dist/emit.min.js',
 })
 
-build({
+buildPlugin({
   entryPoints: [`builds/module.js`],
   outfile: `dist/emit.esm.js`,
   platform: 'neutral',
   mainFields: ['main', 'module'],
 })
 
-function build(options) {
-  options.define || (options.define = {})
-
-  return require('esbuild')
-    .build({ ...options, minify: true, bundle: true })
-    .catch(() => process.exit(1))
+function buildPlugin(buildOptions) {
+  return require('esbuild').buildSync({
+    ...buildOptions,
+    minify: true,
+    bundle: true,
+  })
 }
