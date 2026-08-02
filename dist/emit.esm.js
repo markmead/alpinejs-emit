@@ -1,1 +1,0 @@
-function r(e,f){let c=typeof e=="object"?e:document.querySelector(e),t=Alpine.$data(c);Object.keys(f).forEach(o=>{t[o]=f[o]==="!!"?t[o]=!t[o]:f[o]})}function i(e){e.magic("emit",({Alpine:f})=>(c,t=!1)=>{if(typeof c=="object"){c.forEach(n=>r(n[0],n[1]));return}document.querySelectorAll(c).forEach(n=>r(n,t))})}var s=i;export{s as default};

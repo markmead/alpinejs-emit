@@ -1,15 +1,26 @@
 import { handleData } from './handleData'
 
 export default function (Alpine) {
-  Alpine.magic('emit', ({ Alpine }) => (targetEl, newData = false) => {
-    if (typeof targetEl === 'object') {
-      targetEl.forEach((elItem) => handleData(elItem[0], elItem[1]))
+  Alpine.magic('emit', () => (targetEl, newData = {}) => {
+    const emitPairs = Array.isArray(targetEl) ? targetEl : [[targetEl, newData]]
 
-      return
-    }
+    emitPairs.forEach(([elTarget, elData = {}]) => {
+      if (!elTarget) {
+        return
+      }
 
-    const targetEls = document.querySelectorAll(targetEl)
+      const foundEls =
+        typeof elTarget === 'string'
+          ? document.querySelectorAll(elTarget)
+          : [elTarget]
 
-    targetEls.forEach((elItem) => handleData(elItem, newData))
+      foundEls.forEach((foundEl) => {
+        if (!Alpine.closestRoot(foundEl)) {
+          return
+        }
+
+        handleData(Alpine, foundEl, elData)
+      })
+    })
   })
 }

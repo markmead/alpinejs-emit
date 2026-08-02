@@ -1,12 +1,8 @@
-export function handleData(targetEl, newData) {
-  const foundEl =
-    typeof targetEl === 'object' ? targetEl : document.querySelector(targetEl)
-  const alpineEl = Alpine.$data(foundEl)
+export function handleData(Alpine, targetEl, newData) {
+  const alpineData = Alpine.$data(targetEl)
 
   Object.keys(newData).forEach((dataKey) => {
-    alpineEl[dataKey] =
-      newData[dataKey] === '!!'
-        ? (alpineEl[dataKey] = !alpineEl[dataKey])
-        : newData[dataKey]
+    alpineData[dataKey] =
+      newData[dataKey] === '!!' ? !alpineData[dataKey] : newData[dataKey]
   })
 }

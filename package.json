@@ -1,6 +1,6 @@
 {
   "name": "alpinejs-emit",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Emit `x-data` changes to other Alpine JS elements 📣",
   "keywords": [
     "Alpine",
@@ -12,12 +12,39 @@
     "JavaScript Emit",
     "JavaScript Emitter"
   ],
-  "module": "dist/emit.esm.js",
+  "license": "MIT",
+  "author": "Mark Mead",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markmead/alpinejs-emit.git"
+  },
+  "homepage": "https://github.com/markmead/alpinejs-emit#readme",
+  "bugs": "https://github.com/markmead/alpinejs-emit/issues",
+  "main": "dist/emit.cjs",
+  "module": "dist/emit.mjs",
   "unpkg": "dist/emit.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/emit.mjs",
+      "require": "./dist/emit.cjs",
+      "default": "./dist/emit.mjs"
+    },
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0"
-  }
+    "alpinejs": "^3.15.0",
+    "esbuild": "^0.28.1",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@11.1.3"
 }
