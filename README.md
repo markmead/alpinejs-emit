@@ -7,8 +7,8 @@ Emit data changes to other Alpine JS elements 📣
 > [`Alpine.store`](https://alpinejs.dev/globals/alpine-store) — it's built in
 > and better suited to the job. This plugin is still useful when you don't
 > control the markup structure (server-rendered templates, for example) and
-> can't restructure into a store. It works and is tested, but is no longer
-> developed.
+> can't restructure into a store. The 2.0.0 release was tested against Alpine
+> 3.x before publishing, but the project is no longer developed.
 
 ## Breaking Changes in 2.0.0
 
