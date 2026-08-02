@@ -36,14 +36,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "node scripts/build.js",
-    "test": "vitest run"
+    "build": "node scripts/build.js"
   },
   "devDependencies": {
-    "alpinejs": "^3.15.0",
-    "esbuild": "^0.28.1",
-    "jsdom": "^26.1.0",
-    "vitest": "^3.2.4"
+    "esbuild": "^0.28.1"
   },
   "packageManager": "pnpm@11.1.3"
 }
