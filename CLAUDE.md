@@ -17,7 +17,7 @@ pnpm test                   # vitest run (jsdom)
 pnpm vitest run test/emit.test.js -t 'toggle'   # single file / single test by name
 ```
 
-`prepublishOnly` runs the build, so a publish can't ship a stale `dist/`.
+There is no `prepublishOnly` hook — the project is sunset, so releases are manual: run `pnpm run build` and commit `dist/` before publishing.
 
 ## Architecture
 

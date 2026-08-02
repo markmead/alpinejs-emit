@@ -37,8 +37,7 @@
   ],
   "scripts": {
     "build": "node scripts/build.js",
-    "test": "vitest run",
-    "prepublishOnly": "pnpm run build"
+    "test": "vitest run"
   },
   "devDependencies": {
     "alpinejs": "^3.15.0",
