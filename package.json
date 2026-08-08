@@ -3,14 +3,12 @@
   "version": "2.0.0",
   "description": "Emit `x-data` changes to other Alpine JS elements 📣",
   "keywords": [
-    "Alpine",
-    "Alpine JS",
-    "Alpine JS Plugin",
-    "Alpine JS Plugins",
-    "Alpine JS Emit",
-    "Alpine JS Emitter",
-    "JavaScript Emit",
-    "JavaScript Emitter"
+    "alpine",
+    "alpinejs",
+    "alpinejs-plugin",
+    "emit",
+    "emitter",
+    "x-data"
   ],
   "license": "MIT",
   "author": "Mark Mead",
