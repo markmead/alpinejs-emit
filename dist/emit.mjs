@@ -1,0 +1,1 @@
+function s(o,t,e){let f=o.$data(t);Object.keys(e).forEach(r=>{f[r]=e[r]==="!!"?!f[r]:e[r]})}function a(o){o.magic("emit",()=>(t,e={})=>{(Array.isArray(t)?t:[[t,e]]).forEach(r=>{if(!Array.isArray(r))return;let[c,n={}]=r;if(!c)return;(typeof c=="string"?document.querySelectorAll(c):[c]).forEach(i=>{o.closestRoot(i)&&s(o,i,n)})})})}var d=a;export{d as default};
