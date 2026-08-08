@@ -14,8 +14,8 @@ Emit data changes to other Alpine JS elements 📣
 
 - A selector in the array form now emits to **every** match, not just the
   first. `$emit([['.target', {}]])` previously updated only the first `.target`.
-- Elements matching a selector that aren't Alpine components are skipped rather
-  than throwing part-way through an emit.
+- Targets with no Alpine component ancestor are skipped rather than throwing
+  part-way through an emit.
 - The package now ships `dist/emit.mjs` and `dist/emit.cjs` (previously
   `dist/emit.esm.js`, with no CommonJS build at all). `import`/`require` of the
   package name both work; update any deep imports of the old file paths.
@@ -123,7 +123,13 @@ $emit([
 Every element matching a selector is updated, so `.select1` above will emit to
 all of its matches. The `'!!'` toggle works here too.
 
-Elements matching a selector that aren't Alpine components are skipped.
+A target with no Alpine component ancestor is skipped.
+
+Targets resolve to the nearest enclosing component, so a target that isn't
+itself an `x-data` root but sits inside one is _not_ skipped — it writes to that
+enclosing component. If `.card` matches three plain `<div>`s inside a single
+`x-data` root, `$emit('.card', { open: true })` sets `open` on that one root,
+three times over. Point your selectors at the `x-data` elements themselves.
 
 ### Element Targets
 
